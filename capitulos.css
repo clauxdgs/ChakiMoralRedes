@@ -1,0 +1,416 @@
+* {
+
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+html {
+
+     scroll-behavior: smooth;
+
+     -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+     min-height: 100vh;
+
+     padding: 30px;
+
+     overflow-x: hidden;
+
+     font-family: "Poppins", sans-serif;
+
+     color: white;
+
+     position: relative;
+
+     background: #000;
+}
+
+/* =========================
+   FONDO (FIX REAL)
+========================= */
+
+.bg {
+
+     position: fixed;
+
+     inset: 0;
+
+     background-image:
+          url("imagenes/fondo.jpg");
+
+     background-size: cover;
+
+     background-position: center;
+
+     background-repeat: no-repeat;
+
+     z-index: 0;
+}
+
+/* capa oscura suave */
+
+.bg::after {
+
+     content: "";
+
+     position: absolute;
+
+     inset: 0;
+
+     background:
+          rgba(0, 0, 0, 0.20);
+}
+
+/* =========================
+   PARTICULAS
+========================= */
+
+.particles {
+
+     position: fixed;
+
+     inset: 0;
+
+     pointer-events: none;
+
+     z-index: 1;
+
+     opacity: 0.35;
+
+     background-image:
+
+          radial-gradient(rgba(255, 255, 255, 0.18) 2px,
+               transparent 2px);
+
+     background-size: 60px 60px;
+
+     animation:
+          particlesMove 18s linear infinite;
+}
+
+@keyframes particlesMove {
+
+     from {
+
+          transform: translateY(0);
+     }
+
+     to {
+
+          transform: translateY(-60px);
+     }
+}
+
+/* =========================
+   PAGE (IMPORTANTE)
+========================= */
+
+.page {
+
+     position: relative;
+
+     z-index: 2;
+
+     max-width: 1400px;
+
+     margin: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+
+     display: flex;
+
+     justify-content: space-between;
+
+     align-items: center;
+
+     gap: 20px;
+
+     flex-wrap: wrap;
+
+     margin-bottom: 50px;
+
+     animation: fadeDown 1s ease;
+}
+
+/* =========================
+   TITULO
+========================= */
+
+h1 {
+
+     font-size: 52px;
+
+     font-weight: 800;
+
+     text-shadow:
+          0 5px 18px rgba(255, 182, 218, 0.5);
+}
+
+/* =========================
+   BOTON VOLVER
+========================= */
+
+.back-btn {
+
+     text-decoration: none;
+
+     color: white;
+
+     background:
+          linear-gradient(135deg, #ff9ed6, #d98fff);
+
+     padding: 14px 24px;
+
+     border-radius: 18px;
+
+     font-weight: 700;
+
+     display: flex;
+
+     align-items: center;
+
+     gap: 10px;
+
+     transition: 0.25s ease;
+}
+
+.back-btn:hover {
+
+     transform: translateY(-3px);
+
+     box-shadow:
+          0 0 25px rgba(255, 255, 255, 0.4),
+          0 0 45px rgba(255, 158, 214, 0.35);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.video-grid {
+
+     display: grid;
+
+     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+     gap: 35px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.video-card {
+
+     overflow: hidden;
+
+     border-radius: 28px;
+
+     background: rgba(255, 255, 255, 0.12);
+
+     backdrop-filter: blur(16px);
+
+     border: 1px solid rgba(255, 255, 255, 0.18);
+
+     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+
+     transition: 0.35s ease;
+
+     animation: fadeUp 0.8s ease both;
+}
+
+.video-card:hover {
+
+     transform: translateY(-10px) scale(1.02);
+
+     box-shadow:
+          0 0 30px rgba(255, 255, 255, 0.25),
+          0 0 60px rgba(255, 182, 218, 0.2);
+}
+
+/* =========================
+   IMAGEN
+========================= */
+
+.video-card img {
+
+     width: 100%;
+
+     aspect-ratio: 16/9;
+
+     object-fit: cover;
+
+     display: block;
+
+     transition: 0.4s ease;
+}
+
+.video-card:hover img {
+
+     transform: scale(1.05);
+}
+
+/* =========================
+   INFO
+========================= */
+
+.video-info {
+
+     padding: 22px;
+}
+
+/* =========================
+   TITULO VIDEO
+========================= */
+
+.video-info h3 {
+
+     font-size: 22px;
+
+     line-height: 1.4;
+
+     margin-bottom: 18px;
+
+     font-weight: 700;
+}
+
+/* =========================
+   BOTON VIDEO
+========================= */
+
+.video-info a {
+
+     text-decoration: none;
+
+     display: inline-flex;
+
+     align-items: center;
+
+     gap: 10px;
+
+     background: linear-gradient(135deg, #ff9ed6, #d98fff);
+
+     color: white;
+
+     padding: 12px 20px;
+
+     border-radius: 16px;
+
+     font-weight: 700;
+
+     transition: 0.25s ease;
+}
+
+.video-info a:hover {
+
+     transform: translateY(-2px);
+
+     box-shadow:
+          0 0 25px rgba(255, 255, 255, 0.4),
+          0 0 40px rgba(255, 158, 214, 0.35);
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes fadeUp {
+
+     from {
+
+          opacity: 0;
+
+          transform: translateY(40px);
+     }
+
+     to {
+
+          opacity: 1;
+
+          transform: translateY(0);
+     }
+}
+
+@keyframes fadeDown {
+
+     from {
+
+          opacity: 0;
+
+          transform: translateY(-30px);
+     }
+
+     to {
+
+          opacity: 1;
+
+          transform: translateY(0);
+     }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px) {
+
+     body {
+
+          padding: 20px;
+     }
+
+     h1 {
+
+          font-size: 38px;
+     }
+}
+
+@media(max-width:480px) {
+
+     body {
+
+          padding: 16px;
+     }
+
+     h1 {
+
+          font-size: 30px;
+     }
+
+     .back-btn {
+
+          width: 100%;
+
+          justify-content: center;
+     }
+
+     .video-grid {
+
+          grid-template-columns: 1fr;
+     }
+
+     .video-info h3 {
+
+          font-size: 18px;
+     }
+
+     .video-info a {
+
+          width: 100%;
+
+          justify-content: center;
+     }
+}
